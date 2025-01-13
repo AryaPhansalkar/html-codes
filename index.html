@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Events event bubbling</title>
+</head>
+<style>
+    .header{
+        padding:0;
+        display: flex;
+        justify-content: center;
+    }
+    #yes{
+        height:30px;
+        width:50px
+    }
+    #no{
+        height:30px;
+        width:50px
+    }
+    .box{
+        padding-top: 30vh;
+        display:flex;
+        justify-content: space-around;
+        
+    }
+
+</style>
+<body>
+    <div class="header"><h1>Live In a house full of cats?</h1></div>
+    <div class="box">
+        <button id="yes">YES</button><button id="no">NO</button>
+    </div>
+</body>
+<script>
+    let b=document.getElementById("yes");
+    function movebutton(){
+
+        const X=Math.random()*255;
+        const Y=Math.random()*255;
+        b.style.transform = `translate(${X}px, ${Y}px)`;
+        b.style.left = `${X}px`;
+        b.style.top = `${Y}px`;
+    }
+    b.addEventListener("mouseenter",movebutton);
+</script>
+</html>
